@@ -56,7 +56,7 @@ Three datasets are used in our paper. For each dataset, we use 60% of the docume
 ## Running on New Datasets
 If you have a new dataset, please take the following steps to run our code on your dataset.
 
-(1) Prepare the input files. You need a corpus (```{dataset}/{dataset}.txt```) to perform topic mining and a set of seeds (see ```{dataset}/keywords_0.txt```). **If** you would like to calculate the PMI, NPMI, and LCP scores, you need a corpus (```{dataset}/{dataset}_test.txt```) to count the (co-)occurrence of top-ranked terms.
+(1) Prepare the input files. You need a corpus (```{dataset}/{dataset}.txt```) to perform topic mining and a set of seeds (see ```{dataset}/keywords_0.txt```). If you would like to calculate the PMI, NPMI, and LCP scores, you need a corpus (```{dataset}/{dataset}_test.txt```) to count the (co-)occurrence of top-ranked terms.
 
 (2) You can use any tool to preprocess your corpus (e.g., phrase chunking, lowercasing). If you would like to follow our practice, please refer to the [CatE](https://github.com/yumeng5/CatE/tree/master/preprocess) preprocessing step, which uses [AutoPhrase](https://github.com/shangjingbo1226/AutoPhrase).
 
