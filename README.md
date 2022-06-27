@@ -60,7 +60,7 @@ If you have a new dataset, please take the following steps to run our code on yo
 
 (2) You can use any tool to preprocess your corpus (e.g., phrase chunking, lowercasing). If you would like to follow our practice, please refer to the [CatE](https://github.com/yumeng5/CatE/tree/master/preprocess) preprocessing step, which uses [AutoPhrase](https://github.com/shangjingbo1226/AutoPhrase).
 
-(3) You can use any BERT-based pre-training language model that you think is more suitable for your seeds and corpus (e.g., [BERT-cased](https://huggingface.co/bert-base-cased), [SciBERT](https://huggingface.co/allenai/scibert_scivocab_uncased), [ChemBERT](https://huggingface.co/jiangg/chembert_cased)).
+(3) You can use any BERT-based pre-trained language model that you think is more suitable for your seeds and corpus (e.g., [BERT-cased](https://huggingface.co/bert-base-cased), [SciBERT](https://huggingface.co/allenai/scibert_scivocab_uncased), [ChemBERT](https://huggingface.co/jiangg/chembert_cased)).
 
 (4) ```./seetopic.sh```. Make sure you have changed the dataset name and the language model folder.
 
