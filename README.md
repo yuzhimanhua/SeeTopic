@@ -67,10 +67,12 @@ If you have a new dataset, please take the following steps to run our code on yo
 ## Citation
 If you find the implementation useful, please cite the following paper:
 ```
-@article{zhang2022seed,
+@inproceedings{zhang2022seed,
   title={Seed-Guided Topic Discovery with Out-of-Vocabulary Seeds},
   author={Zhang, Yu and Meng, Yu and Wang, Xuan and Wang, Sheng and Han, Jiawei},
-  journal={arXiv preprint arXiv:2205.01845},
-  year={2022}
+  booktitle={NAACL'22},
+  pages={279--290},
+  year={2022},
+  organization={ACL}
 }
 ```
