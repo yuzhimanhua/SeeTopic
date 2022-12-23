@@ -5,8 +5,8 @@ import os
 from collections import defaultdict
 from transformers import BertTokenizer, BertModel
 from tqdm import tqdm
-os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
-os.environ["CUDA_VISIBLE_DEVICES"] = '0'
+
+device = torch.device(0)
 
 parser = argparse.ArgumentParser(description='main', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 parser.add_argument('--dataset', default='scidocs')
@@ -22,7 +22,7 @@ corpus_file = f'{args.dataset}.txt'
 bert_file = f'embedding_{args.model}.txt'
 
 tokenizer = BertTokenizer.from_pretrained(bert_model)
-model = BertModel.from_pretrained(bert_model, output_hidden_states=True).cuda()
+model = BertModel.from_pretrained(bert_model, output_hidden_states=True).to(device)
 model.eval()
 
 cnt = defaultdict(int)
@@ -49,7 +49,7 @@ with open(os.path.join(args.dataset, bert_file), 'w') as f:
 	f.write(f'{len(vocabulary)} 768\n')
 	for word in tqdm(vocabulary):
 		text = word.replace('_', ' ')
-		input_ids = torch.tensor(tokenizer.encode(text, max_length=256, truncation=True)).unsqueeze(0).cuda()
+		input_ids = torch.tensor(tokenizer.encode(text, max_length=256, truncation=True)).unsqueeze(0).to(device)
 		outputs = model(input_ids)
 		hidden_states = outputs[2][-1][0]
 		emb = torch.mean(hidden_states, dim=0).cpu()
