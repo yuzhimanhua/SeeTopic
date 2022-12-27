@@ -33,7 +33,7 @@ out_file = f'../{dataset}/keywords_local_{num_iter}.txt'
 
 with open(out_file, 'w') as fout:
 	for idx, topic in enumerate(topics):
-		word2score = defaultdict(int)
+		word2score = defaultdict(float)
 		for word in word2emb:
 			for term in topic[1:]:
 				word2score[word] += np.dot(word2emb[word], word2emb[term])
