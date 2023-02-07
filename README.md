@@ -1,5 +1,7 @@
 # Seed-Guided Topic Discovery with Out-of-Vocabulary Seeds
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 This repository contains the source code for [**Seed-Guided Topic Discovery with Out-of-Vocabulary Seeds**](https://arxiv.org/abs/2205.01845).
 
 ## Links
