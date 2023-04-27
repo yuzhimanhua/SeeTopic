@@ -45,13 +45,14 @@ with open(os.path.join(args.dataset, 'keywords_0.txt')) as fin, open(os.path.joi
 			fout.write(word+'\n')
 			vocabulary.add(word)
 
-with open(os.path.join(args.dataset, bert_file), 'w') as f:
-	f.write(f'{len(vocabulary)} 768\n')
-	for word in tqdm(vocabulary):
-		text = word.replace('_', ' ')
-		input_ids = torch.tensor(tokenizer.encode(text, max_length=256, truncation=True)).unsqueeze(0).to(device)
-		outputs = model(input_ids)
-		hidden_states = outputs[2][-1][0]
-		emb = torch.mean(hidden_states, dim=0).cpu()
+with torch.no_grad():
+	with open(os.path.join(args.dataset, bert_file), 'w') as f:
+		f.write(f'{len(vocabulary)} 768\n')
+		for word in tqdm(vocabulary):
+			text = word.replace('_', ' ')
+			input_ids = torch.tensor(tokenizer.encode(text, max_length=256, truncation=True)).unsqueeze(0).to(device)
+			outputs = model(input_ids)
+			hidden_states = outputs[2][-1][0]
+			emb = torch.mean(hidden_states, dim=0).cpu()
 
-		f.write(f'{word} '+' '.join([str(x.item()) for x in emb])+'\n')
+			f.write(f'{word} '+' '.join([str(x.item()) for x in emb])+'\n')
