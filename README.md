@@ -69,7 +69,7 @@ If you have a new dataset, please take the following steps to run our code on yo
 (4) ```./seetopic.sh```. Make sure you have changed the dataset name and the language model folder.
 
 ## Citation
-If you find the implementation useful, please cite the following paper:
+If you find this repository useful, please cite the following paper:
 ```
 @inproceedings{zhang2022seed,
   title={Seed-Guided Topic Discovery with Out-of-Vocabulary Seeds},
