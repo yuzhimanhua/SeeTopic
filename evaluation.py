@@ -59,7 +59,7 @@ with open(f'{dataset}/keywords_{model}.csv') as fin:
 			word_set.add(word)
 
 print(model)
-print('PMI:', pmi/len(topics)/(topk*(topk-1)))
-print('NPMI:', npmi/len(topics)/(topk*(topk-1)))
-print('LCP:', lcp/len(topics)/(topk*(topk-1)))
-print('Diversity:', len(word_set)/((topk)*num_topics))
+print('PMI:', pmi / len(topics) / (topk*(topk-1)/2))
+print('NPMI:', npmi / len(topics) / (topk*(topk-1)/2))
+print('LCP:', lcp / len(topics) / (topk*(topk-1)/2))
+print('Diversity:', len(word_set) / ((topk)*num_topics))
