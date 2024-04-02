@@ -78,7 +78,6 @@ If you find this repository useful, please cite the following paper:
   author={Zhang, Yu and Meng, Yu and Wang, Xuan and Wang, Sheng and Han, Jiawei},
   booktitle={NAACL'22},
   pages={279--290},
-  year={2022},
-  organization={ACL}
+  year={2022}
 }
 ```
