@@ -33,8 +33,6 @@ To evaluate the result (using automatic evaluation metrics), you need to run the
 ```
 PMI, NPMI, LCP, and Diversity scores will be printed out.
 
-**NOTE: There is an error in our original evaluation code, which halves all NPMI and LCP scores reported in our [paper](https://arxiv.org/pdf/2205.01845.pdf). (In other words, if the NPMI or LCP score reported in our paper is 0.1, then the true value should be 0.2.) We have corrected this error in our current evaluation code.**
-
 ## Data
 Three datasets are used in our paper. For each dataset, we use 60% of the documents to perform topic mining and the remaining 40% for automatic evaluation (i.e., calculating PMI, NPMI, and LCP scores). In each dataset folder, you can see three files. We use ```scidocs/``` as an example for explanation.
 
